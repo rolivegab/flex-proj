@@ -25,12 +25,13 @@
 "REAL"					{printf("TYPE_REAL: %s\n", yytext);}
 "STRING"				{printf("TYPE_STRING: %s\n", yytext);}
 "CHAR"					{printf("TYPE_CHAR: %s\n", yytext);}
-"=="					{printf("OP_COMPA: %s\n", yytext);}
+"=="|"<="|">="|"<"|">"	{printf("OP_RELAC: %s\n", yytext);}
 "="						{printf("OP_ATRIB: %s\n", yytext);}
 "END"					{printf("END: %s\n", yytext);}
+"RETURN"				{printf("RETURN: %s\n", yytext);}
+"BREAK"					{printf("BREAK: %s\n", yytext);}
 "\|\|"|"&&"				{printf("OP_LOGICO: %s\n", yytext);}
 ";"						{printf("SEMI: %s\n", yytext);}
-":="					{printf("ASSIGN: %s\n", yytext);}
 [a-zA-Z][a-zA-Z0-9]*	{printf("Variável: %s\n", yytext);}
 .						{printf("Caractere invalido!\n");}
 
