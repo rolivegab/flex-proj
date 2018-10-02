@@ -6,13 +6,29 @@
 
 [ \t\n]
 [0-9]*					{printf("Número: %s\n", yytext);}
-"while"					{printf("WHILE: %s\n", yytext);}
-"begin"					{printf("BLOCK_BEGIN: %s\n", yytext);}
-"end"					{printf("BLOCK_END %s \n", yytext);}
-"do"					{printf("DO: %s\n", yytext);}
-"if"					{printf("IF: %s\n", yytext);}
-"then"					{printf("THEN: %s\n", yytext);}
-"else"					{printf("ELSE: %s\n", yytext);}
+"WHILE"					{printf("WHILE: %s\n", yytext);}
+"ENDWHILE"				{printf("ENDWHILE: %s\n", yytext);}
+"DO"					{printf("DO: %s\n", yytext);}
+"IF"					{printf("IF: %s\n", yytext);}
+"ENDIF"					{printf("ENDIF: %s\n", yytext);}
+"FOR"					{printf("FOR: %s\n", yytext);}
+"ENDFOR"				{printf("ENDFOR: %s\n", yytext);}
+"ELSE"					{printf("ELSE: %s\n", yytext);}
+"ENDELSE"				{printf("ENDELSE: %s\n", yytext);}
+"PROCEDURE"				{printf("PROCEDURE: %s\n", yytext);}
+"TYPEDEF"				{printf("TYPEDEF: %s\n", yytext);}
+"+"						{printf("OP_SOMA: %s\n", yytext);}
+"-"						{printf("OP_SUB: %s\n", yytext);}
+"*"						{printf("OP_MULT: %s\n", yytext);}
+"/"						{printf("OP_DIV: %s\n", yytext);}
+"INT"					{printf("TYPE_INT: %s\n", yytext);}
+"REAL"					{printf("TYPE_REAL: %s\n", yytext);}
+"STRING"				{printf("TYPE_STRING: %s\n", yytext);}
+"CHAR"					{printf("TYPE_CHAR: %s\n", yytext);}
+"=="					{printf("OP_COMPA: %s\n", yytext);}
+"="						{printf("OP_ATRIB: %s\n", yytext);}
+"END"					{printf("END: %s\n", yytext);}
+"\|\|"|"&&"				{printf("OP_LOGICO: %s\n", yytext);}
 ";"						{printf("SEMI: %s\n", yytext);}
 ":="					{printf("ASSIGN: %s\n", yytext);}
 [a-zA-Z][a-zA-Z0-9]*	{printf("Variável: %s\n", yytext);}
